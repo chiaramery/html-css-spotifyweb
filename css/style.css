@@ -22,10 +22,6 @@ a{
     text-decoration: none;
     color: rgb(119 121 126);
 }
-i{
-    font-size: 2em;
-    padding-right: .2em;
-}
 h2,h4{
     color: white;
 }
@@ -80,6 +76,10 @@ h1,h2,h3,h4,p {
 }
 .side-menu .icon{
     width: 1.8em;
+}
+.side-menu i{
+        font-size: 2em;
+        padding-right: .2em;
 }
 .side-menu h4{
     font-size: .8em;
@@ -175,6 +175,8 @@ nav ul li a{
 }
 p{
     color:  rgb(119 121 126);
+    font-size: .8em ;
+    padding-bottom: 1em;
 }
 /* Created by */
 .created{
@@ -185,6 +187,14 @@ p{
     padding-left: var(--pl-1);
     margin-bottom: 2em;
 }
+/* Artists */
+.image-radius img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 /* Player bar */
 .player{
     position: fixed;
@@ -197,12 +207,47 @@ p{
     z-index: 1000;
 }
 .type-music{
+    display: flex;
     flex-grow: 1;
     background-color: yellowgreen;
+    padding: 1em 2em;
 }
+.type-music i{
+    color: rgb(119 121 126);
+    padding-left: .5em;
+}
+.iconss{
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+}
+.type-image{
+    width: 50px;
+}
+.text-music{
+    padding-left: .5em;
+}
+.text-music h5{
+    color: white;
+}
+.text-music p{
+    padding: 0;
+    margin: 0;
+    font-size: .6em;
+}
+
+
+
 .play{
     flex-grow: 2;
     background-color: aqua;
+}
+.buttonss i{
+    padding: 1em;
+    font-size: 1.8em;
+}
+.timed{
+    display: flex;
 }
 .volume{
     flex-grow: 1;
