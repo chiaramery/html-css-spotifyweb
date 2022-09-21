@@ -18,6 +18,17 @@ img{
 ul{
     list-style-type: none;
 }
+a{
+    text-decoration: none;
+    color: rgb(119 121 126);
+}
+i{
+    font-size: 2em;
+    padding-right: .2em;
+}
+h2,h4{
+    color: white;
+}
 :root{
     /* Colors */
     --side-bar: rgb(0 0 0);
@@ -37,7 +48,7 @@ ul{
 }
 
 /* Typography */
-h1,h2,h3,h5,p {
+h1,h2,h3,h4,p {
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -58,27 +69,27 @@ h1,h2,h3,h5,p {
     font-size: 1.4em;
     padding: 1em 0 1em 0;
 }
-.logo h1{
-    padding-left: var(--pl-1);
-}
-
 .side-bar{
-    position: relative;
     width: 200px;
     padding-left: 1em;
-    /* DEBUG */
-    background-color: lightcoral;
+    background-color:var(--side-bar);
+}
+.side-bar .icon{
+    width: 1.7em;
+    padding-right: .3em;
 }
 .side-menu .icon{
     width: 1.8em;
+}
+.side-menu h4{
+    font-size: .8em;
 }
 .side-menu ul li{
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: var(--mb-1);
-    border: 1px solid black;
-    color: white;
+    color: rgb(119 121 126);
 }
 .install{
     display: flex;
@@ -92,8 +103,9 @@ h1,h2,h3,h5,p {
 .user .icon img{
     margin-top: 1em;
     margin-right: 2px;
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
     background-color: grey;
     border-radius: 50%;
     object-fit: fill;
@@ -106,11 +118,10 @@ h1,h2,h3,h5,p {
 /* Main header */
 .container{
     width: calc(100% - 100px);
-    /* DEBUG */
-    background-color: lightskyblue;
+    background-color: var(--album);
 }
 .upgrade{
-    width: calc(100% - 200px);
+    width: calc(100% - 187px);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -118,8 +129,7 @@ h1,h2,h3,h5,p {
     position: fixed;
     right: 0;
     top: 0;
-    /* DEBUG */
-    background-color: lightgreen;
+    background-color: rgba(8, 11, 18, .7);
 }
 .upgrade a{
     font-size: .8em;
@@ -130,17 +140,14 @@ h1,h2,h3,h5,p {
     padding-right: 2em;
     margin-right: .5em;
     border: 2px solid white;
-    /* DEBUG */
     color: white;
-    background-color: blueviolet;
+    background-color:var(--side-bar);
 }
 /* Nav */
 nav{
     padding-top: 6em;
     width: 80%;
     margin: 0 auto;
-    /* DEBUG */
-    background-color: lightslategray;
 }
 nav ul{
     display: flex;
@@ -152,6 +159,9 @@ nav ul li a{
     text-decoration: none;
 }
 /* Recently played */
+.played{
+    padding-left: var(--pl-1);
+}
 .row{
     display: flex; 
 }
@@ -159,12 +169,12 @@ nav ul li a{
     width: calc(100% / 6 - 1em);
     margin-right: var(--pr-1);
     margin-bottom: var(--mb-2);
-    /* DEBUG */
-    border: 1px solid black;
-    background-color: lightpink;
 }
-.played{
-    padding-left: var(--pl-1);
+.text{
+    text-align: center;
+}
+p{
+    color:  rgb(119 121 126);
 }
 /* Created by */
 .created{
