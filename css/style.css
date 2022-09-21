@@ -1,0 +1,274 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* COMMON */
+html{
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+:root{
+    /* Colors */
+    --side-bar: rgb(0 0 0);
+    --player: rgb(40 40 40);
+    --album: rgb(20 25 34);
+    --green: rgb(177 253 65);
+
+    /* Spaces */
+
+    /* margin */
+    --mb-1: .8rem;
+    --mb-2: 4rem;
+
+    /* padding */
+    --pl-1: 1rem;
+    --pr-1: 1rem;
+}
+/* Utilies */
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+/* Typography */
+h1,h2,h3,h5,p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* MAIN */
+.spotiflex{
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: auto;
+    display: flex;
+    justify-content: space-between;
+}
+/* Side-bar */
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-size: 1.4em;
+    padding: 1em 0 1em 0;
+}
+.logo h1{
+    padding-left: var(--pl-1);
+}
+
+.side-bar{
+    padding-left: var(--pl-1);
+    width: 200px;
+    /* DEBUG */
+    background-color: lightcoral;
+}
+.side-menu .icon{
+    width: 1.8em;
+}
+.side-menu ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--mb-1);
+    border: 1px solid black;
+    color: white;
+}
+.install{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.install .icon img{
+    margin-right: 2px;
+    width: 1.8em;
+}
+.user .icon img{
+    margin-top: 1em;
+    margin-right: 2px;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: grey;
+    border-radius: 50%;
+    object-fit: fill;
+}
+.user{
+   display: flex;
+   color: white;
+}
+.wrapper-side{
+    position: absolute;
+    bottom: 0;
+    left: 1em;
+}
+/* Main header */
+.container{
+    width: calc(100% - 100px);
+    /* DEBUG */
+    background-color: lightskyblue;
+}
+.upgrade{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+    /* DEBUG */
+    background-color: lightgreen;
+}
+.upgrade a{
+    font-size: .8em;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: .8em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-right: .5em;
+    border: 2px solid white;
+    /* DEBUG */
+    color: white;
+    background-color: blueviolet;
+}
+/* Nav */
+nav{
+    width: 80%;
+    margin: 0 auto;
+    /* DEBUG */
+    background-color: lightslategray;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li a{ 
+    font-size: 1.1em;
+    padding: .3em;
+    text-decoration: none;
+}
+/* Recently played */
+.row{
+    display: flex; 
+}
+.album{
+    width: calc(100% / 6 - 1em);
+    margin-right: var(--pr-1);
+    margin-bottom: var(--mb-2);
+    /* DEBUG */
+    border: 1px solid black;
+    background-color: lightpink;
+}
+.played{
+    padding-left: var(--pl-1);
+}
+/* Player bar */
+.player{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 92vh);
+    background-color: lightseagreen;
+}
+.type-music{
+    flex-grow: 1;
+    background-color: yellowgreen;
+}
+.play{
+    flex-grow: 2;
+    background-color: aqua;
+}
+.volume{
+    flex-grow: 1;
+    background-color: brown;
+}
+
+
+
+
+
+
+/* MEDIA QUERY */
+/* Small desktop - 1100px */
+@media screen and (max-width: 1100px){
+    /* Nav */
+    nav ul{
+        flex-wrap: wrap;
+    }
+    nav ul li{
+        width: calc(100% / 5);
+    }
+    /* Recently played */
+    .row{
+        flex-wrap: wrap;
+    }
+    .album{
+        width: calc(100% / 4 - (2rem * 2 / 3));
+    }
+}
+
+
+/* Tablet - 700px */
+@media screen and (max-width: 700px) {
+    /* Nav */
+    nav ul li{
+        width: calc(100% / 3);
+    }
+    /* Recently played */
+    .album{
+        width: calc(100% / 2 - (2rem * 2 / 3));
+    }
+}
+/* Phone - 600px */
+@media screen and (max-width: 600px) {
+    /* Side bar */
+    .side-bar{
+       width: 10%;
+    }
+    .phone{
+        display: none;
+    }
+    /* Nav */
+    nav ul{
+        justify-content: space-around;
+    }
+    nav ul li{
+        width: calc(100% / 4);
+    }
+
+    .container{
+        width: 90%;
+    }
+}
