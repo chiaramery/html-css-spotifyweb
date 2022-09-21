@@ -121,7 +121,9 @@ h1,h2,h3,h4,p {
     background-color: var(--album);
 }
 .upgrade{
-    width: calc(100% - 187px);
+    /* PROBLEMA */
+    width: calc(100% - 100px);
+    /* /PROBLEMA */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -196,63 +198,77 @@ p{
 }
 
 /* Player bar */
-.player{
+
+/* FOOTER */
+footer{
+    width: 100%;
+    display: flex;
+    padding: 0px 1em;
+    color: white;
+    background-color: var(--player);
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.footer-left,
+.footer-right {
+    width: 20%;
+}
+/* Card left */
+.footer-left {
     display: flex;
     align-items: center;
-    height: calc(100vh - 92vh);
-    background-color: lightseagreen;
-    z-index: 1000;
 }
-.type-music{
-    display: flex;
-    flex-grow: 1;
-    background-color: yellowgreen;
-    padding: 1em 2em;
+.type-image{
+    width: 25%;
+    margin-right: .5em;
 }
-.type-music i{
+.text-music{
+    margin-right: 2em;
+}
+.iconss i{
     color: rgb(119 121 126);
     padding-left: .5em;
 }
-.iconss{
+/* Play */
+.footer-center {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left: 2em;
+    justify-content: center;
+    width: 60%;
 }
-.type-image{
-    width: 50px;
-}
-.text-music{
-    padding-left: .5em;
-}
-.text-music h5{
-    color: white;
-}
-.text-music p{
-    padding: 0;
-    margin: 0;
-    font-size: .6em;
-}
-
-
-
-.play{
-    flex-grow: 2;
-    background-color: aqua;
+.buttonss{
+    display:flex
 }
 .buttonss i{
-    padding: 1em;
+    padding: .5em;
     font-size: 1.8em;
 }
 .timed{
     display: flex;
+    justify-content: center;
 }
-.volume{
-    flex-grow: 1;
-    background-color: brown;
+.timed p{
+   margin-left: .5em;
 }
+/* Volume */
+.footer-right {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.footer-right i{
+    padding-left: .5em;
+}
+.footer-right hr{
+    margin-left: 1em;
+    padding-right: 7em;
+}
+
+
+
 
 
 
