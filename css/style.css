@@ -168,6 +168,7 @@ h4:hover{
     top: 0;
     background-color: rgba(8, 11, 18, .7);
     z-index: 998;
+    margin-right: 1.1em;
 }
 .upgrade a{
     font-size: .8em;
@@ -181,6 +182,9 @@ h4:hover{
     color: white;
     display: inline-block;
     background-color:var(--side-bar);
+}
+.upgrade a:hover{
+    font-size: .9em;
 }
 /* Nav */
 nav{
