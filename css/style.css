@@ -35,9 +35,10 @@ h2,h3,h4{
     --album: rgb(20 25 34);
     --green: rgb(177 253 65);
 
+    /* Measures */
     --sidebar-width: 200px;
     --upgrade-heigth: 80px;
-    --height-wrapper-side: 100px;
+    --sidebar-bottom-height: 80px;
     --footer-height: 105px;
     /* Spaces */
 
@@ -64,6 +65,9 @@ h1,h2,h3,h4,p {
     justify-content: space-between;
 }
 /* Side-bar */
+.top-side{
+    height: calc(88% - var(--sidebar-bottom-height));
+}
 .logo{
     display: flex;
     flex-direction: row;
@@ -140,8 +144,8 @@ h4:hover{
    display: flex;
    color: white;
 }
-.wrapper-side{
-    height: var(--height-wrapper-side);
+.bottom-side{
+    height: var(--sidebar-bottom-height);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -154,9 +158,7 @@ h4:hover{
     overflow-y: scroll;
 }
 .upgrade{
-    /* PROBLEMA */
     width: calc(100% - var(--sidebar-width));
-    /* /PROBLEMA */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -165,6 +167,7 @@ h4:hover{
     right: 0;
     top: 0;
     background-color: rgba(8, 11, 18, .7);
+    z-index: 998;
 }
 .upgrade a{
     font-size: .8em;
