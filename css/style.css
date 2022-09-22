@@ -37,6 +37,8 @@ h2,h3,h4{
 
     --sidebar-width: 200px;
     --upgrade-heigth: 80px;
+    --height-wrapper-side: 100px;
+    --footer-height: 105px;
     /* Spaces */
 
     /* margin */
@@ -81,6 +83,8 @@ h1,h2,h3,h4,p {
     padding-right: .3em;
 }
 .side-menu{
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 .side-menu .icon{
@@ -92,6 +96,7 @@ h1,h2,h3,h4,p {
 }
 .side-menu h4{
     font-size: .8em;
+    color: rgb(119 121 126);
 }
 .side-menu ul li{
     display: flex;
@@ -99,6 +104,15 @@ h1,h2,h3,h4,p {
     align-items: center;
     margin-bottom: var(--mb-1);
     color: rgb(119 121 126);
+}
+.up li:hover{
+    border-left: 1px solid var(--green);
+}
+h4:hover{
+    color: white;
+}
+.phone a:hover{
+    color: white;
 }
 .install{
     display: flex;
@@ -119,16 +133,19 @@ h1,h2,h3,h4,p {
     border-radius: 50%;
     object-fit: fill;
 }
+.install{
+    border-bottom: 1px solid rgb(91 91 91);
+}
 .user{
    display: flex;
    color: white;
 }
 .wrapper-side{
+    height: var(--height-wrapper-side);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* DEBUG */
-    background-color: grey;
+
 }
 /* Main header */
 .container{
@@ -177,6 +194,10 @@ nav ul li a{
     padding: .3em;
     text-decoration: none;
 }
+nav ul li a:hover{
+    border-bottom: 2px solid var(--green);
+    color: white;
+}
 /* Recently played */
 .played{
     padding-left: var(--pl-1);
@@ -188,6 +209,22 @@ nav ul li a{
     width: calc(100% / 6 - 1em);
     margin-right: var(--pr-1);
     margin-bottom: var(--mb-2);
+    position: relative;
+}
+/* hover */
+.square{
+    display: none;
+}
+.square i{
+    font-size: 3em;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -200%);
+}
+.album:hover .square{
+    display: block;
 }
 .text{
     text-align: center;
@@ -214,9 +251,9 @@ p{
     border-radius: 50%;
 }
 
-/* Player bar */
 
 /* FOOTER */
+/* Player*/
 footer{
     width: 100%;
     display: flex;
@@ -239,15 +276,21 @@ footer{
     justify-content: center;
 }
 .type-image{
-    width: 25%;
+    width: 7em;
     margin-right: .5em;
 }
 .text-music{
     margin-right: 2em;
 }
+.iconss{
+    display: flex;
+}
 .iconss i{
     color: rgb(119 121 126);
     padding-left: .5em;
+}
+.iconss i:hover{
+    color: white;
 }
 /* Play */
 footer{
@@ -268,6 +311,7 @@ footer{
     padding: .5em;
     font-size: 1.8em;
 }
+
 .timed{
     width: 80%;
 }
@@ -327,19 +371,11 @@ footer{
 }
 .slider::-webkit-slider-thumb {
     -webkit-appearance: var(--player-1);
-    appearance: var(--player-1);
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background:var(--player-1);
     cursor: pointer;
   }
-
-
-
-
-
-
 
 
 /* MEDIA QUERY */
@@ -364,35 +400,52 @@ footer{
 
 /* Tablet - 700px */
 @media screen and (max-width: 700px) {
-    /* Nav */
-    nav ul li{
-        width: calc(100% / 3);
-    }
-    /* Recently played */
-    .album{
-        width: calc(100% / 2 - (2rem * 2 / 3));
-    }
+/* Nav */
+nav ul li{
+    width: calc(100% / 3);
+}
+/* Recently played */
+.album{
+    width: calc(100% / 2 - (2rem * 2 / 3));
+}
+/* Player */
+.footer-left,
+.footer-right {
+    width: 35%;
+}
+.footer-center{
+    width: 65%;
+}
 }
 /* Phone - 600px */
 @media screen and (max-width: 600px) {
-    /* Side bar */
-    .side-bar{
-       width: 65px;
-    }
-    .phone{
-        display: none;
-    }
-    /* Nav */
-    nav ul{
-        justify-content: space-around;
-    }
-    nav ul li{
-        width: calc(100% / 4);
-    }
-    .upgrade{
-        width: calc(100% - 65px);
-    }
-    .container{
-        width: calc(100% - 65px);
-    }
+/* Side bar */
+.side-bar{
+    width: 65px;
+}
+.phone{
+    display: none;
+}
+/* Nav */
+nav ul{
+    justify-content: space-around;
+}
+nav ul li{
+    width: calc(100% / 4);
+}
+.upgrade{
+    width: calc(100% - 65px);
+}
+.container{
+    width: calc(100% - 65px);
+}
+/* Player */
+.footer-left,
+.footer-right {
+    width: 30%;
+}
+.footer-center{
+    width: 40%;
+}
+
 }
