@@ -9,7 +9,8 @@ html{
     font-size: 100%;
     font-family: 'Montserrat', sans-serif;
 }
-body{
+main{
+    width: 100%;
     height: 100vh;
 }
 img{
@@ -22,7 +23,7 @@ a{
     text-decoration: none;
     color: rgb(119 121 126);
 }
-h2,h4{
+h2,h3,h4{
     color: white;
 }
 :root{
@@ -32,6 +33,8 @@ h2,h4{
     --album: rgb(20 25 34);
     --green: rgb(177 253 65);
 
+    --sidebar-width: 200px;
+    --upgrade-heigth: 80px;
     /* Spaces */
 
     /* margin */
@@ -52,9 +55,9 @@ h1,h2,h3,h4,p {
 /* MAIN */
 .spotiflex{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    overflow: auto;
 }
 /* Side-bar */
 .logo{
@@ -66,13 +69,17 @@ h1,h2,h3,h4,p {
     padding: 1em 0 1em 0;
 }
 .side-bar{
-    width: 200px;
+    width: var(--sidebar-width);
+    height: 100%;
     padding-left: 1em;
     background-color:var(--side-bar);
 }
 .side-bar .icon{
     width: 1.7em;
     padding-right: .3em;
+}
+.side-menu{
+    width: 100%;
 }
 .side-menu .icon{
     width: 1.8em;
@@ -114,20 +121,27 @@ h1,h2,h3,h4,p {
    display: flex;
    color: white;
 }
-
+.wrapper-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* DEBUG */
+    background-color: grey;
+}
 /* Main header */
 .container{
-    width: calc(100% - 100px);
+    width: calc(100% - var(--sidebar-width));
     background-color: var(--album);
+    overflow-y: scroll;
 }
 .upgrade{
     /* PROBLEMA */
-    width: calc(100% - 100px);
+    width: calc(100% - var(--sidebar-width));
     /* /PROBLEMA */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 70px;
+    height: var(--upgrade-heigth);
     position: fixed;
     right: 0;
     top: 0;
@@ -143,6 +157,7 @@ h1,h2,h3,h4,p {
     margin-right: .5em;
     border: 2px solid white;
     color: white;
+    display: inline-block;
     background-color:var(--side-bar);
 }
 /* Nav */
@@ -156,7 +171,7 @@ nav ul{
     justify-content: space-between;
 }
 nav ul li a{ 
-    font-size: 1.1em;
+    font-size: .8em;
     padding: .3em;
     text-decoration: none;
 }
@@ -213,12 +228,13 @@ footer{
 
 .footer-left,
 .footer-right {
-    width: 20%;
+    width: 230px;
 }
 /* Card left */
 .footer-left {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .type-image{
     width: 25%;
@@ -232,12 +248,16 @@ footer{
     padding-left: .5em;
 }
 /* Play */
+footer{
+    display: flex;
+    justify-content: space-between;
+}
 .footer-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: calc(100% - 460px);
 }
 .buttonss{
     display:flex
@@ -256,7 +276,7 @@ footer{
 /* Volume */
 .footer-right {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 .footer-right i{
@@ -310,7 +330,7 @@ footer{
 @media screen and (max-width: 600px) {
     /* Side bar */
     .side-bar{
-       width: 10%;
+       width: 65px;
     }
     .phone{
         display: none;
@@ -322,8 +342,10 @@ footer{
     nav ul li{
         width: calc(100% / 4);
     }
-
+    .upgrade{
+        width: calc(100% - 65px);
+    }
     .container{
-        width: 90%;
+        width: calc(100% - 65px);
     }
 }
