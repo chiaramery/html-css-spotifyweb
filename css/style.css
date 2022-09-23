@@ -74,7 +74,7 @@ h1,h2,h3,h4,p {
     align-items: center;
     color: white;
     font-size: 1.4em;
-    padding: 1em 0 1em 1em;
+    padding: 1em 0 1em .8em;
 }
 .side-bar{
     width: var(--sidebar-width);
@@ -152,7 +152,7 @@ h4:hover{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
+    padding-left: 1em;
 }
 /* Main header */
 .container{
@@ -205,7 +205,7 @@ nav ul li a{
     text-decoration: none;
 }
 nav ul li a:hover{
-    border-bottom: 2px solid var(--green);
+    border-bottom: 3px solid var(--green);
     color: white;
 }
 /* Recently played */
@@ -273,6 +273,7 @@ footer{
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 999;
 }
 
 .footer-left,
@@ -320,6 +321,7 @@ footer{
 .buttonss i{
     padding: .5em;
     font-size: 1.8em;
+    color: white;
 }
 
 .timed{
@@ -444,7 +446,7 @@ nav ul li{
     width: calc(100% / 4);
 }
 .upgrade{
-    width: calc(100% - 65px);
+    width: calc(100% - 70px);
 }
 .container{
     width: calc(100% - 65px);
