@@ -187,7 +187,7 @@ h4:hover{
     background-color:var(--side-bar);
 }
 .upgrade a:hover{
-    font-size: .9em;
+    transform: scale(1.1);
 }
 /* Nav */
 nav{
@@ -323,7 +323,9 @@ footer{
     font-size: 1.8em;
     color: white;
 }
-
+.buttonss a:hover{
+    transform: scale(1.3);
+}
 .timed{
     width: 80%;
 }
@@ -367,6 +369,9 @@ footer{
 }
 .ico a{
     color: white;
+}
+.ico a:hover{
+    transform: scale(1.3);
 }
 .footer-right.slidecontainer {
     width: 60%;
